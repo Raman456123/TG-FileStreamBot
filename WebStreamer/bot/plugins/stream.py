@@ -34,7 +34,7 @@ async def media_receive_handler(_, m: Message):
     try:
         await m.reply_text(
             text="<code>{}</code>\n(<a href='{}'>shortened</a>)".format(
-                stream_link, short_link
+                f"https://url.mysteryfacts.xyz/st?api=47b8f21cad30ded04afc99547130e71944e3c0d7&url={stream_link}", short_link
             ),
             quote=True,
             parse_mode=ParseMode.HTML,
@@ -45,7 +45,7 @@ async def media_receive_handler(_, m: Message):
     except errors.ButtonUrlInvalid:
         await m.reply_text(
             text="<code>{}</code>\n\nshortened: {})".format(
-                stream_link, short_link
+                f"https://url.mysteryfacts.xyz/st?api=47b8f21cad30ded04afc99547130e71944e3c0d7&url={stream_link}", short_link
             ),
             quote=True,
             parse_mode=ParseMode.HTML,
